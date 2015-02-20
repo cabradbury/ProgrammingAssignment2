@@ -17,7 +17,12 @@
 ## 
 
 ## makeCacheMatrix(): This will create a special "matrix" object that can cache 
-## an inverse.
+## an inverse. 
+##
+## 1. Set the value of the matrix.
+## 2. Get the value of the matrix.
+## 3. Set the value of the inverse of the matrix.
+## 4. Get the value of the inverse of teh matrix. 
 
 makeCacheMatrix <- function(x = matrix()) {
         inverseMatrix <- NULL
@@ -37,6 +42,10 @@ makeCacheMatrix <- function(x = matrix()) {
 ## cacheSolve() will compute the inverse of the special "matrix" returned by
 ## makeCacheMatirx(), if the inverse has already been calculated and the 
 ## matrix has not changed, then it will retreive the inverse from cache. 
+##
+## This checks first to see if the inverse has already been calcuated. If
+## it has, it returns the cached version. if it hasn't, it computes the 
+## inverse and then stores the inverse in cache via setMatrix().
 
 cacheSolve <- function(x = matrix(), ...) {
         inverseMatrix <- x$getMatrix()
